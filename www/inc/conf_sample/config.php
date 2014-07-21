@@ -6,7 +6,7 @@
 // ##############################################################################
 // Minimal Configuration  #######################################################
 // ##############################################################################
-//api to use : domoticz | domogik | domotiga | openhab
+//api to use : domoticz | domogik | domotiga | openhab | zway
 $conf['app']['api']			="openhab";
 
 // Personalize the name of your Home

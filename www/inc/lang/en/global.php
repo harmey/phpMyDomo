@@ -52,6 +52,8 @@ $lang['types']['gas']		="Gas/Smoke";
 $lang['types']['counter']	="Counter";
 $lang['types']['radiation']	="Radiations";
 $lang['types']['visibility']="Visibility";
+$lang['types']['battery']       ="Battery";
+$lang['types']['lux']           ="Luminiscence";
 
 // infos ################################################################
 $lang['infos']['sunset']	="Sunset";

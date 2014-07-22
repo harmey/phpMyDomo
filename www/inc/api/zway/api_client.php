@@ -61,7 +61,13 @@ class PMD_ApiClient extends PMD_Root_ApiClient{
 				elseif($dev['deviceType'] == 'toggleButton'){
 					$d['class'] = 'scene';
                                         $d['type'] = 'group';
+					$d['state'] = $dev['metrics']['level'];
 				}
+				if($dev['deviceType'] == 'sensorBinary'){
+                                        $d['class'] = 'sensor';
+                                        $d['type'] = 'pir';
+                                        $d['state'] = $dev['metrics']['level'];
+                                }
 				elseif($dev['deviceType'] == 'sensorMultilevel' ){
                                         $d['class'] = 'sensor';
 					$d['value'] = $dev['metrics']['level'];
@@ -77,7 +83,16 @@ class PMD_ApiClient extends PMD_Root_ApiClient{
 					elseif($dev['metrics']['probeTitle'] == 'Electric '){
                                                 $d['type'] = 'counter';
                                         }
+					elseif($dev['metrics']['probeTitle'] == 'Luminiscence'){
+						$d['type'] = 'lux';
+					}
 				}
+				elseif($dev['deviceType'] == 'battery'){
+                                      $d['class'] = 'sensor';
+                                      $d['type'] = 'battery';
+                                      $d['value'] = $dev['metrics']['level'];
+                                      $d['unit'] = $dev['metrics']['scaleTitle'];
+                                }
 				//elseif($dev['deviceType'] == 'switchControl'){
                                 //      $d['class'] = 'command';
                                 //      $d['type'] = 'switch';
